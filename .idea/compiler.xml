@@ -10,6 +10,7 @@
         <module name="ddd-domain" />
         <module name="ddd-infra" />
         <module name="ddd-application" />
+        <module name="ddd-common" />
         <module name="ddd-start" />
       </profile>
     </annotationProcessing>

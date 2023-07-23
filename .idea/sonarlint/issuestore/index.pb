@@ -1,19 +1,9 @@
 
 y
 Iddd-application/src/main/java/com/nntk/ddd/application/entity/UserVo.java,2\2\22c058e063c204ff59032ec585086e5cf41a9c4a
-o
-?ddd-domain/src/main/java/com/nntk/ddd/domain/entity/UserBo.java,a\b\abb2109b9e6635df87a5dd47f8a7059f78bd1f7b
-~
-Nddd-domain/src/main/java/com/nntk/ddd/domain/impl/UserBusinessServiceImpl.java,d\9\d91280a51662a893cf11e7b500d74443d47542a0
-u
-Eddd-domain/src/main/java/com/nntk/ddd/domain/UserBusinessService.java,d\b\db8054f14fa60e3ef91ab9c5a692fcbecc0a92cd
 r
 Bddd-domain/src/main/java/com/nntk/ddd/domain/entity/MqMessage.java,e\6\e68283286bc09193c0e2cc3abb287019c5d2c93e
 k
 ;ddd-domain/src/main/java/com/nntk/ddd/domain/MqService.java,2\f\2f018f175af1106bc41aba94af538bdec246a274
 t
 Dddd-domain/src/main/java/com/nntk/ddd/domain/impl/MqServiceImpl.java,9\6\96515159a6cc9c7ca2f8d55ea39ba58936289812
-j
-:ddd-web/src/main/java/com/nntk/ddd/web/UserController.java,d\1\d107c88e547b3111ea9c7c0f9c335e4e958615d5
-€
-Pddd-application/src/main/java/com/nntk/ddd/application/impl/UserServiceImpl.java,d\e\de569b4a975da75696522f52b2ae45858542c358

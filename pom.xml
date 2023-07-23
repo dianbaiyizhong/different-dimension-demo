@@ -14,6 +14,7 @@
         <module>ddd-domain</module>
         <module>ddd-infra</module>
         <module>ddd-start</module>
+        <module>ddd-common</module>
     </modules>
 
     <properties>
@@ -38,6 +39,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
 
         <dependency>

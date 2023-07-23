@@ -20,4 +20,9 @@ public class UserBusinessServiceImpl implements UserBusinessService {
                 .points(10)
                 .build();
     }
+
+    @Override
+    public UserBo check(UserBo userBo) {
+        return null;
+    }
 }

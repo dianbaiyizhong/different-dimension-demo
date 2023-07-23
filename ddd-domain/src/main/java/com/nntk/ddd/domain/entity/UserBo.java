@@ -9,4 +9,6 @@ public class UserBo {
 
     // 积分
     private int points;
+
+    private String userName;
 }
