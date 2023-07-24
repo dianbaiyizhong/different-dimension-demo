@@ -20,21 +20,21 @@ public class RespBodyBuilder {
     }
 
 
-    public static ResultDataVO build(int code, String message, Object data) {
+    public static ResultDataVo build(int code, String message, Object data) {
 
-        return ResultDataVO.builder().code(code).message(message).data(data).build();
-
-    }
-
-    public static ResultDataVO build(int code, String message) {
-
-        return ResultDataVO.builder().code(code).message(message).build();
+        return ResultDataVo.builder().code(code).message(message).data(data).build();
 
     }
 
-    public static ResultDataVO buildSuccess(String clientTip) {
+    public static ResultDataVo build(int code, String message) {
 
-        return ResultDataVO.builder().code(CommonRestCode.SUCCESS.getCode()).message(CommonRestCode.SUCCESS.getMessage()).clientTip(clientTip).build();
+        return ResultDataVo.builder().code(code).message(message).build();
+
+    }
+
+    public static ResultDataVo buildSuccess(String clientTip) {
+
+        return ResultDataVo.builder().code(CommonRestCode.SUCCESS.getCode()).message(CommonRestCode.SUCCESS.getMessage()).clientTip(clientTip).build();
 
     }
 
@@ -43,8 +43,8 @@ public class RespBodyBuilder {
      *
      * @return
      */
-    public static ResultDataVO success() {
-        return ResultDataVO.builder().code(CommonRestCode.SUCCESS.getCode()).message(CommonRestCode.SUCCESS.getMessage()).build();
+    public static ResultDataVo success() {
+        return ResultDataVo.builder().code(CommonRestCode.SUCCESS.getCode()).message(CommonRestCode.SUCCESS.getMessage()).build();
     }
 
     /**
@@ -53,17 +53,17 @@ public class RespBodyBuilder {
      * @param data
      * @return
      */
-    public static ResultDataVO success(Object data) {
+    public static ResultDataVo success(Object data) {
 
-        return ResultDataVO.builder().code(CommonRestCode.SUCCESS.getCode()).message(CommonRestCode.SUCCESS.getMessage()).data(data).build();
+        return ResultDataVo.builder().code(CommonRestCode.SUCCESS.getCode()).message(CommonRestCode.SUCCESS.getMessage()).data(data).build();
 
     }
 
-    public static ResultDataVO create(BusinessException businessException) {
+    public static ResultDataVo create(BusinessException businessException) {
         String clientInfo = Optional.ofNullable(businessException.getRestCode().getClientInfo()).orElse(businessException.getClientTip());
         String message = Optional.ofNullable(businessException.getRestCode().getMessage()).orElse(businessException.getMessage());
         Integer code = businessException.getRestCode().getCode();
-        return ResultDataVO.builder()
+        return ResultDataVo.builder()
                 .code(code)
                 .message(message)
                 .clientTip(clientInfo)
@@ -79,11 +79,11 @@ public class RespBodyBuilder {
      * @param message
      * @return
      */
-    public static ResultDataVO error(Exception exception, HttpServletRequest request, int code, String message) {
+    public static ResultDataVo error(Exception exception, HttpServletRequest request, int code, String message) {
         log.error("[Error occurred.] - [code={}, message={}] ", code, exception.getMessage());
         log.error("print stack:{}", getStackTraceByPn(exception, "com.zhenmei.wsc"));
 
-        return ResultDataVO.builder()
+        return ResultDataVo.builder()
                 .code(code)
                 .message(message)
                 .data(exception.getMessage())

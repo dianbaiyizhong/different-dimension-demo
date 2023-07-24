@@ -10,7 +10,7 @@ import java.util.Date;
 @Builder
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResultDataVO<T> {
+public class ResultDataVo<T> {
 
     /**
      * 业务状态码
