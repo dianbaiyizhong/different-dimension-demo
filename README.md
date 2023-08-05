@@ -10,4 +10,49 @@ spring-boot自我约束，以ddd为例
 包名应该全是小写，也不该有中划线，下划线等
 
 
+### 实体类规范
+#### query类
+介于前端到服务控制层之间，传递前端人员想要查询的条件，里面推荐使用spring校验注解方式完成参数校验
+#### vo类
+后台展示给前端的对象类，跟query类是反着来的
+#### Dto类
+1. QueryDto，可以传给repository层给数据库作为查询条件，这里应该跟query有所区分，因为query跟dto之间还有业务处理
 
+
+
+
+### 前端显示
+#### 参数错误返回
+```json
+{
+    "code": 400001,
+    "message": "参数错误",
+    "data": [
+        {
+            "codes": [
+                "NotNull.commonQuery.rows",
+                "NotNull.rows",
+                "NotNull.java.lang.Integer",
+                "NotNull"
+            ],
+            "arguments": [
+                {
+                    "codes": [
+                        "commonQuery.rows",
+                        "rows"
+                    ],
+                    "arguments": null,
+                    "defaultMessage": "rows",
+                    "code": "rows"
+                }
+            ],
+            "defaultMessage": "不能为null",
+            "objectName": "commonQuery",
+            "field": "rows",
+            "rejectedValue": null,
+            "bindingFailure": false,
+            "code": "NotNull"
+        }
+    ]
+}
+```

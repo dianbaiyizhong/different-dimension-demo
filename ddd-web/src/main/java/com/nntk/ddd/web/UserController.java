@@ -1,10 +1,13 @@
 package com.nntk.ddd.web;
 
 import com.nntk.ddd.application.UserService;
-import com.nntk.ddd.application.entity.UserVo;
+import com.nntk.ddd.application.entity.vo.UserVo;
+import com.nntk.ddd.application.entity.query.CommonQuery;
+import com.nntk.ddd.common.result.PageResult;
 import com.nntk.ddd.common.result.RespBodyBuilder;
 import com.nntk.ddd.common.result.ResultDataVo;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,13 +39,11 @@ public class UserController {
     }
 
 
-
-
-
-
-
-
-
+    @RequestMapping("/list")
+    public ResultDataVo getList(@RequestBody @Valid CommonQuery commonQuery) {
+        PageResult userList = userService.getUserList(commonQuery);
+        return RespBodyBuilder.success(userList);
+    }
 
 
 }

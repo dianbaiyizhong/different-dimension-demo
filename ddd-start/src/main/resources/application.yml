@@ -6,6 +6,6 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
 server:
-  port: 2408
+  port: 8024
   servlet:
     context-path: /

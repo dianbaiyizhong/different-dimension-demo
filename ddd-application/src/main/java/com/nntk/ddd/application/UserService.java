@@ -1,6 +1,7 @@
 package com.nntk.ddd.application;
 
-import com.nntk.ddd.application.entity.UserVo;
+import com.nntk.ddd.application.entity.vo.UserVo;
+import com.nntk.ddd.application.entity.query.CommonQuery;
 import com.nntk.ddd.common.result.PageResult;
 
 public interface UserService {
@@ -9,7 +10,7 @@ public interface UserService {
 
 
 
-    public PageResult getUserList();
+    public PageResult getUserList(CommonQuery commonQuery);
 
 
 }

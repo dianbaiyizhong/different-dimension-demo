@@ -1,5 +1,6 @@
 package com.nntk.ddd.common.result;
 
+import com.nntk.ddd.common.constant.BaseRestCode;
 import com.nntk.ddd.common.constant.CommonRestCode;
 import com.nntk.ddd.common.exception.BusinessException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,6 +30,13 @@ public class RespBodyBuilder {
     public static ResultDataVo build(int code, String message) {
 
         return ResultDataVo.builder().code(code).message(message).build();
+
+    }
+
+
+    public static ResultDataVo build(BaseRestCode restCode, Object data) {
+
+        return ResultDataVo.builder().code(restCode.getCode()).message(restCode.getMessage()).data(data).build();
 
     }
 

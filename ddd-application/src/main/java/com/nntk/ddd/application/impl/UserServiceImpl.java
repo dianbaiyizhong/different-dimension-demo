@@ -3,17 +3,20 @@ package com.nntk.ddd.application.impl;
 import com.nntk.ddd.application.UserService;
 import com.nntk.ddd.application.constant.ApplicationRestCode;
 import com.nntk.ddd.application.converter.UserConvertor;
-import com.nntk.ddd.application.entity.UserVo;
+import com.nntk.ddd.application.entity.vo.UserVo;
+import com.nntk.ddd.application.entity.query.CommonQuery;
 import com.nntk.ddd.common.exception.ExceptionFactory;
 import com.nntk.ddd.common.result.PageResult;
 import com.nntk.ddd.domain.MqService;
 import com.nntk.ddd.domain.UserBusinessService;
 import com.nntk.ddd.domain.entity.UserBo;
 import com.nntk.ddd.infra.UserRepository;
+import com.nntk.ddd.infra.dto.CommonQueryDto;
 import com.nntk.ddd.infra.repository.entity.TUser;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -60,7 +63,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageResult getUserList() {
-        return null;
+    public PageResult getUserList(CommonQuery commonQuery) {
+
+
+        PageResult<TUser> tUserPageResult = userRepository.getUserList(CommonQueryDto.builder()
+                .page(commonQuery.getPage())
+                .rows(commonQuery.getRows())
+                .build());
+
+
+        List<UserVo> userVos = UserConvertor.INSTANCE.do2Vo(tUserPageResult.getResult());
+
+        return new PageResult(tUserPageResult.getTotal(), userVos);
+
+
     }
 }
