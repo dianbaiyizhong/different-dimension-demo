@@ -17,8 +17,8 @@
           <entry name="$PROJECT_DIR$/../../repo/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
           <entry name="$PROJECT_DIR$/../../repo/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
         </processorPath>
-        <module name="ddd-web" />
         <module name="ddd-domain" />
+        <module name="ddd-web" />
         <module name="ddd-infra" />
         <module name="ddd-application" />
         <module name="ddd-common" />

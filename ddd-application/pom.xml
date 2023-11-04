@@ -20,7 +20,7 @@
 
         <dependency>
             <groupId>com.nntk.ddd</groupId>
-            <artifactId>ddd-domain</artifactId>
+            <artifactId>ddd-infra</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

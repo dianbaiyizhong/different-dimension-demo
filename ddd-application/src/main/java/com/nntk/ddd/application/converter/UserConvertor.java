@@ -2,8 +2,7 @@ package com.nntk.ddd.application.converter;
 
 import com.nntk.ddd.application.entity.vo.UserVo;
 import com.nntk.ddd.common.convertor.BaseConvertor;
-import com.nntk.ddd.domain.entity.UserBo;
-import com.nntk.ddd.infra.repository.entity.TUser;
+import com.nntk.ddd.domain.entity.UserBO;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -19,27 +18,27 @@ import java.util.List;
 public abstract class UserConvertor extends BaseConvertor {
     public static final UserConvertor INSTANCE = Mappers.getMapper(UserConvertor.class);
 
-    public abstract UserBo do2Bo(TUser user);
+//    public abstract UserBO do2Bo(TUser user);
+//
+//
+//    @Mappings({
+//            @Mapping(source = "username", target = "userName")
+//    })
+//    public abstract UserVo do2Vo(TUser user);
 
 
-    @Mappings({
-            @Mapping(source = "username", target = "userName")
-    })
-    public abstract UserVo do2Vo(TUser user);
+
+//    public abstract List<UserVo> do2Vo(List<TUser> list);
 
 
-
-    public abstract List<UserVo> do2Vo(List<TUser> list);
-
-
-    public abstract List<UserBo> do2Bo(List<TUser> list);
+//    public abstract List<UserBO> do2Bo(List<TUser> list);
 
 
-    public abstract UserBo vo2Bo(UserVo user);
+    public abstract UserBO vo2Bo(UserVo user);
 
-    public abstract TUser bo2Do(UserBo user);
+//    public abstract TUser bo2Do(UserBO user);
 
-    public abstract List<TUser> bo2Do(List<UserBo> list);
+//    public abstract List<TUser> bo2Do(List<UserBO> list);
 
 
 

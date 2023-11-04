@@ -1,4 +1,4 @@
-package com.nntk.ddd.infra.dto;
+package com.nntk.ddd.common.dto;
 
 import lombok.Builder;
 import lombok.Data;

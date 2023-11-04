@@ -18,9 +18,11 @@
 
 
     <dependencies>
+
+
         <dependency>
             <groupId>com.nntk.ddd</groupId>
-            <artifactId>ddd-infra</artifactId>
+            <artifactId>ddd-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

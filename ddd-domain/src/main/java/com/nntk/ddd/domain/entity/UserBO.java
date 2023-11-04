@@ -1,11 +1,15 @@
 package com.nntk.ddd.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-public class UserBo {
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserBO {
 
     // 积分
     private int points;
