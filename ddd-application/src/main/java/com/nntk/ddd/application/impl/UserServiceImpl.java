@@ -10,12 +10,11 @@ import com.nntk.ddd.common.exception.ExceptionFactory;
 import com.nntk.ddd.common.result.PageResult;
 import com.nntk.ddd.domain.MqService;
 import com.nntk.ddd.domain.UserBusinessService;
-import com.nntk.ddd.domain.entity.UserBO;
+import com.nntk.ddd.domain.entity.UserBo;
 import com.nntk.ddd.domain.repository.IUserRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -37,14 +36,14 @@ public class UserServiceImpl implements UserService {
 
 
         // 1.查看用户名是否已经被注册过
-        UserBO userDo = userRepository.queryByUserName(userVo.getUserName());
+        UserBo userDo = userRepository.queryByUserName(userVo.getUserName());
         if (!Objects.isNull(userDo)) {
             ExceptionFactory.createBusiness(ApplicationRestCode.ALREADY_EXIST, "已存在相同用户名");
         }
 
 
         // 2.检查用户信息合法性
-        UserBO userBo = UserConvertor.INSTANCE.vo2Bo(userVo);
+        UserBo userBo = UserConvertor.INSTANCE.vo2Bo(userVo);
         userBusinessService.check(userBo);
 
 
@@ -64,7 +63,7 @@ public class UserServiceImpl implements UserService {
     public PageResult getUserList(CommonQuery commonQuery) {
 
 
-        PageResult<UserBO> tUserPageResult = userRepository.getUserList(CommonQueryDto.builder()
+        PageResult<UserBo> tUserPageResult = userRepository.getUserList(CommonQueryDto.builder()
                 .page(commonQuery.getPage())
                 .rows(commonQuery.getRows())
                 .build());

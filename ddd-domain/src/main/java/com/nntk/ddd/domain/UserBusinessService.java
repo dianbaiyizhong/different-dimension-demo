@@ -1,11 +1,11 @@
 package com.nntk.ddd.domain;
 
-import com.nntk.ddd.domain.entity.UserBO;
+import com.nntk.ddd.domain.entity.UserBo;
 
 public interface UserBusinessService {
 
-    public UserBO register(UserBO userBo);
+    public UserBo register(UserBo userBo);
 
-    public UserBO check(UserBO userBo);
+    public UserBo check(UserBo userBo);
 
 }

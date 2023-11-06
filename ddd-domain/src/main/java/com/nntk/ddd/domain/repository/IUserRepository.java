@@ -2,18 +2,18 @@ package com.nntk.ddd.domain.repository;
 
 import com.nntk.ddd.common.dto.CommonQueryDto;
 import com.nntk.ddd.common.result.PageResult;
-import com.nntk.ddd.domain.entity.UserBO;
+import com.nntk.ddd.domain.entity.UserBo;
 
 public interface IUserRepository {
 
-    UserBO queryById(int id);
+    UserBo queryById(int id);
 
-    UserBO queryByUserName(String userName);
+    UserBo queryByUserName(String userName);
 
-    void save(UserBO user);
+    void save(UserBo user);
 
 
-    PageResult<UserBO> getUserList(CommonQueryDto commonQueryDto);
+    PageResult<UserBo> getUserList(CommonQueryDto commonQueryDto);
 
 
 }
