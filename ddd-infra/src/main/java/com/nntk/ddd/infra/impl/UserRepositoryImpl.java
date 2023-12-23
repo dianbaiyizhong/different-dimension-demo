@@ -4,7 +4,7 @@ import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.nntk.ddd.common.dto.CommonQueryDto;
 import com.nntk.ddd.common.result.PageResult;
-import com.nntk.ddd.domain.entity.UserBo;
+import com.nntk.ddd.domain.entity.UserBO;
 import com.nntk.ddd.domain.repository.IUserRepository;
 import com.nntk.ddd.infra.converter.UserConvertor;
 import com.nntk.ddd.infra.repository.entity.TUser;
@@ -22,28 +22,28 @@ public class UserRepositoryImpl implements IUserRepository {
 
 
     @Override
-    public UserBo queryById(int id) {
+    public UserBO queryById(int id) {
         TUser tUser = userMapper.selectOneById(id);
         return UserConvertor.INSTANCE.po2Bo(tUser);
     }
 
     @Override
-    public UserBo queryByUserName(String userName) {
+    public UserBO queryByUserName(String userName) {
         TUser tUser = userMapper.selectOneByQuery(QueryWrapper.create().where(TUser::getUsername).eq(userName));
         return UserConvertor.INSTANCE.po2Bo(tUser);
     }
 
     @Override
-    public void save(UserBo user) {
+    public void save(UserBO user) {
         TUser po = UserConvertor.INSTANCE.bo2Po(user);
         userMapper.insert(po);
     }
 
 
     @Override
-    public PageResult<UserBo> getUserList(CommonQueryDto commonQueryDto) {
+    public PageResult<UserBO> getUserList(CommonQueryDto commonQueryDto) {
         Page<TUser> pager = userMapper.paginate(commonQueryDto.getPage(), commonQueryDto.getRows(), QueryWrapper.create().where(TUser::getId).ge(0));
-        List<UserBo> userBos = UserConvertor.INSTANCE.po2Bo(pager.getRecords());
+        List<UserBO> userBos = UserConvertor.INSTANCE.po2Bo(pager.getRecords());
         return new PageResult<>(pager.getTotalRow(), userBos);
     }
 

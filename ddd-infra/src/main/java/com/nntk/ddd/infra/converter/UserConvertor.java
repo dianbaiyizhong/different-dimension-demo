@@ -1,7 +1,7 @@
 package com.nntk.ddd.infra.converter;
 
 import com.nntk.ddd.common.convertor.BaseConvertor;
-import com.nntk.ddd.domain.entity.UserBo;
+import com.nntk.ddd.domain.entity.UserBO;
 import com.nntk.ddd.infra.repository.entity.TUser;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -19,11 +19,11 @@ public abstract class UserConvertor extends BaseConvertor {
     @Mappings({
             @Mapping(source = "username", target = "username")
     })
-    public abstract UserBo po2Bo(TUser user);
+    public abstract UserBO po2Bo(TUser user);
 
-    public abstract List<UserBo> po2Bo(List<TUser> list);
+    public abstract List<UserBO> po2Bo(List<TUser> list);
 
-    public abstract TUser bo2Po(UserBo user);
+    public abstract TUser bo2Po(UserBO user);
 
 
 
