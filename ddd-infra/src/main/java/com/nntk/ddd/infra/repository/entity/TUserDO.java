@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(value = "t_user")
-public class TUser implements Serializable {
+public class TUserDO implements Serializable {
 
     @Id(keyType = KeyType.Auto)
     private Integer id;

@@ -20,6 +20,7 @@ public class MysqlCodegen {
         //通过 datasource 和 globalConfig 创建代码生成器
         Generator generator = new Generator(dataSource, globalConfig);
 
+        globalConfig.getEntityConfig().setClassSuffix("DO");
         //生成代码
         generator.generate();
     }
@@ -32,6 +33,8 @@ public class MysqlCodegen {
         //设置根包
         globalConfig.setBasePackage("com.nntk.ddd.infra.repository");
         globalConfig.setSourceDir(System.getProperty("user.dir") + "/ddd-infra/src/main/java");
+
+
 
         //设置生成 entity 并启用 Lombok
         globalConfig.setEntityGenerateEnable(true);
