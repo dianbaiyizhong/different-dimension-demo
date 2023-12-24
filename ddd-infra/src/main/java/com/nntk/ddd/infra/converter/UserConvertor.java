@@ -19,11 +19,11 @@ public abstract class UserConvertor extends BaseConvertor {
     @Mappings({
             @Mapping(source = "username", target = "username")
     })
-    public abstract UserBO po2Bo(TUserDO user);
+    public abstract UserBO do2Bo(TUserDO user);
 
-    public abstract List<UserBO> po2Bo(List<TUserDO> list);
+    public abstract List<UserBO> do2Bo(List<TUserDO> list);
 
-    public abstract TUserDO bo2Po(UserBO user);
+    public abstract TUserDO bo2Do(UserBO user);
 
 
 
